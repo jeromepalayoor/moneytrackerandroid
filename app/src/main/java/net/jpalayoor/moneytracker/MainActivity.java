@@ -18,6 +18,8 @@ import androidx.biometric.BiometricManager;
 import androidx.biometric.BiometricPrompt;
 import androidx.navigation.NavController;
 import androidx.navigation.ui.NavigationUI;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import net.jpalayoor.moneytracker.ui.settings.SettingsFragment;
 import net.jpalayoor.moneytracker.databinding.ActivityMainBinding;
@@ -46,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
         net.jpalayoor.moneytracker.databinding.ActivityMainBinding binding =
                 ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (v, insets) -> {
+            int topInset = insets.getInsets(WindowInsetsCompat.Type.systemBars()).top;
+            v.setPadding(0, topInset, 0, 0);
+            return insets;
+        });
 
         NotificationHelper.createNotificationChannels(this);
 
