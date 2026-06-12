@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/settings_bg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/settings_header_bg">
+
+        <TextView
+            android:id="@+id/tvMainHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/title_settings"
+            android:textColor="@color/settings_header_text_bg"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/hint_text"/>
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                style="@style/SectionHeader"
+                android:text="@string/budget_text"/>
+
+            <androidx.cardview.widget.CardView
+                style="@style/SettingsCard">
+                <LinearLayout
+                    style="@style/SettingsCardInner">
+
+                    <LinearLayout style="@style/SettingsRow">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                style="@style/SettingsLabel"
+                                android:text="@string/monthly_budget_text"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/resets_every_month_text"
+                                android:textSize="11sp"
+                                android:textColor="@color/secondary_text"/>
+                        </LinearLayout>
+                        <EditText
+                            android:id="@+id/etBudget"
+                            android:layout_width="110dp"
+                            android:layout_height="42dp"
+                            android:background="@drawable/input_background"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="10dp"
+                            android:inputType="numberDecimal"
+                            android:textSize="14sp"
+                            android:textColor="@color/primary_text"
+                            android:hint="@string/amount_hint"
+                            android:textColorHint="@color/hint_text"
+                            android:autofillHints="Amount" />
+                    </LinearLayout>
+
+                    <View style="@style/Divider"/>
+
+                    <LinearLayout style="@style/SettingsRow">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                style="@style/SettingsLabel"
+                                android:text="@string/default_transaction_type_text"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pre_selected_text"
+                                android:textSize="11sp"
+                                android:textColor="@color/secondary_text"/>
+                        </LinearLayout>
+                        <Spinner
+                            android:id="@+id/spinnerDefaultType"
+                            style="@style/SpinnerLabel"
+                            android:layout_width="110dp"
+                            android:layout_height="42dp"
+                            android:background="@drawable/input_background"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:gravity="center"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                style="@style/SectionHeader"
+                android:text="@string/notification_header"/>
+
+            <androidx.cardview.widget.CardView
+                style="@style/SettingsCard">
+                <LinearLayout
+                    style="@style/SettingsCardInner">
+
+                    <LinearLayout style="@style/SettingsRow">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                style="@style/SettingsLabel"
+                                android:text="@string/enable_notification_text"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/budget_warnings_text"
+                                android:textSize="11sp"
+                                android:textColor="@color/secondary_text"/>
+                        </LinearLayout>
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/switchNotifications"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:thumbTint="@color/switch_thumb_selector"
+                            app:trackTint="@color/switch_track_selector"/>
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/dividerFreq"
+                        style="@style/Divider"
+                        android:visibility="gone"/>
+
+                    <LinearLayout
+                        android:id="@+id/rowNotificationFreq"
+                        style="@style/SettingsRow"
+                        android:visibility="gone">
+                        <TextView
+                            style="@style/SettingsLabel"
+                            android:text="@string/reminder_frequency_text"/>
+                        <Spinner
+                            android:id="@+id/spinnerFrequency"
+                            android:layout_width="110dp"
+                            android:layout_height="42dp"
+                            android:background="@drawable/input_background"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:gravity="center"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                style="@style/SectionHeader"
+                android:text="@string/appearance_header"/>
+
+            <androidx.cardview.widget.CardView
+                style="@style/SettingsCard">
+                <LinearLayout
+                    style="@style/SettingsCardInner">
+                    <LinearLayout style="@style/SettingsRow">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                style="@style/SettingsLabel"
+                                android:text="@string/dark_mode_header"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/dark_mode_text"
+                                android:textSize="11sp"
+                                android:textColor="@color/secondary_text"/>
+                        </LinearLayout>
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/switchDarkMode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:thumbTint="@color/switch_thumb_selector"
+                            app:trackTint="@color/switch_track_selector"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                style="@style/SectionHeader"
+                android:text="@string/security_header"/>
+
+            <androidx.cardview.widget.CardView
+                style="@style/SettingsCard">
+                <LinearLayout
+                    style="@style/SettingsCardInner">
+
+                    <LinearLayout style="@style/SettingsRow">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                style="@style/SettingsLabel"
+                                android:text="@string/biometric_header"/>
+                            <TextView
+                                android:id="@+id/tvBiometricSubtitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/biometric_text"
+                                android:textSize="11sp"
+                                android:textColor="@color/secondary_text"/>
+                        </LinearLayout>
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/switchBiometric"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:thumbTint="@color/switch_thumb_selector"
+                            app:trackTint="@color/switch_track_selector"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                style="@style/SectionHeader"
+                android:text="@string/data_header"/>
+
+            <androidx.cardview.widget.CardView
+                style="@style/SettingsCard">
+                <LinearLayout
+                    style="@style/SettingsCardInner">
+
+                    <LinearLayout style="@style/SettingsRow">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                style="@style/SettingsLabel"
+                                android:text="@string/export_all_header"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/export_all_text"
+                                android:textSize="11sp"
+                                android:textColor="@color/secondary_text"/>
+                        </LinearLayout>
+                        <Button
+                            android:id="@+id/btnExportAll"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="@string/export_btn_text"
+                            android:textAllCaps="false"
+                            android:backgroundTint="@color/save_btn_bg"
+                            android:textColor="@color/save_btn_txt"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                style="@style/SectionHeader"
+                android:text="@string/category_header"/>
+
+            <androidx.cardview.widget.CardView
+                style="@style/SettingsCard">
+                <LinearLayout
+                    style="@style/SettingsCardInner">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvCategories"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"/>
+
+                    <View style="@style/Divider"/>
+
+                    <LinearLayout style="@style/SettingsRow">
+                        <EditText
+                            android:id="@+id/etNewCategory"
+                            android:layout_width="0dp"
+                            android:layout_height="42dp"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/input_background"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:hint="@string/new_category_text"
+                            android:textColorHint="@color/hint_text"
+                            android:textColor="@color/primary_text"
+                            android:textSize="13sp"
+                            android:inputType="text"
+                            android:autofillHints="Add new categories" />
+                        <Button
+                            android:id="@+id/btnAddCategory"
+                            android:layout_width="wrap_content"
+                            android:layout_height="42dp"
+                            android:text="@string/add_text"
+                            android:textAllCaps="false"
+                            android:backgroundTint="@color/save_btn_bg"
+                            android:textColor="@color/save_btn_txt"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                style="@style/SectionHeader"
+                android:text="@string/about_header"/>
+
+            <androidx.cardview.widget.CardView
+                style="@style/SettingsCard">
+                <LinearLayout
+                    style="@style/SettingsCardInner">
+
+                    <LinearLayout
+                        style="@style/SettingsRow"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:id="@+id/rowAboutApp">
+                        <TextView
+                            style="@style/SettingsLabel"
+                            android:text="@string/about_text"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/forward_arrow"
+                            android:textSize="20sp"
+                            android:textColor="#999999"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

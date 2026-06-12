@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="settings_bg">#1a1a2e</color>
+    <color name="settings_header_bg">#1E1E1E</color>
+    <color name="settings_header_text_bg">#EEEEEE</color>
+    <color name="settings_card_bg">#252542</color>
+    <color name="primary_text">#FFFFFF</color>
+    <color name="secondary_text">#BBBBBB</color>
+    <color name="text3">#AAAAAA</color>
+    <color name="input_bg">#313152</color>
+    <color name="input_label">#B3B3D9</color>
+    <color name="dialog_bg">#474775</color>
+    <color name="hint_text">#B3B3D9</color>
+    <color name="cancel_btn_bg">#1a1a2e</color>
+    <color name="save_btn_bg">#F0F0F0</color>
+    <color name="cancel_btn_txt">#FFFFFF</color>
+    <color name="save_btn_txt">#666666</color>
+    <color name="home_header_bg">#1A1A2E</color>
+    <color name="home_text_bright">#FFFFFF</color>
+    <color name="home_text_muted">#94A3B8</color>
+    <color name="inflow_card_bg">#142E24</color>
+    <color name="inflow_text">#10B981</color>
+    <color name="outflow_card_bg">#3B1818</color>
+    <color name="outflow_text">#F43F5E</color>
+    <color name="home_body_bg">#0F172A</color>
+    <color name="home_surface_card_bg">#1E293B</color>
+    <color name="home_body_text_primary">#F8FAFC</color>
+    <color name="home_body_text_muted">#94A3B8</color>
+    <color name="home_fab_bg">#334155</color>
+    <color name="budget_bar_bg">#232344</color>
+    <color name="budget_bar_track">#2E2E55</color>
+    <color name="switch_thumb_on">#BF99FF</color>
+    <color name="switch_thumb_off">#7C42BD</color>
+    <color name="switch_track_on">#D180E8</color>
+    <color name="switch_track_off">#8E339F</color>
+    <color name="email_text">#57B0F4</color>
+</resources>
