@@ -16,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.biometric.BiometricManager;
 import androidx.biometric.BiometricPrompt;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.ui.NavigationUI;
 import androidx.core.view.ViewCompat;
@@ -54,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(0, topInset, 0, 0);
             return insets;
         });
+
+        WindowInsetsControllerCompat controller = WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
+        controller.setAppearanceLightStatusBars(false); // false = light icons (white)
 
         NotificationHelper.createNotificationChannels(this);
 
