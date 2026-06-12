@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="settings_bg">#1a1a2e</color>
-    <color name="settings_header_bg">#1E1E1E</color>
+    <color name="settings_header_bg">#1A1A2E</color>
     <color name="settings_header_text_bg">#EEEEEE</color>
     <color name="settings_card_bg">#252542</color>
     <color name="primary_text">#FFFFFF</color>
